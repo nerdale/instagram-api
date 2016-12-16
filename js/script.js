@@ -29,10 +29,10 @@ $.ajax({
     dataType: 'jsonp',
     type: 'GET',
     data: {access_token: token, count: num_photos},
-    success: function(data){
-        console.log(data);
-        for(x in data.data){
-            $('#pictures').append('<div class="col m4"><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'+data.data[x].images.standard_resolution.url+'"><p class="center-align link">Holi</p></div></div></div>');  
+    success: function(response){
+        console.log(response);
+        for(x in response.data){
+            $('#pictures').append('<div class="col m4"><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'+response.data[x].images.standard_resolution.url+'"><p class="center-align link">Holi</p></div></div></div>');  
         }
     },
     error: function(data){
